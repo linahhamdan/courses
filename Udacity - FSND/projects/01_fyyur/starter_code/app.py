@@ -13,7 +13,8 @@ import logging
 from logging import Formatter, FileHandler
 from flask_wtf import Form
 from forms import *
-from flask_migrate import Migrate
+from flask_migrate import Migrate, MigrateCommand
+
 
 
 from models import *
@@ -29,6 +30,8 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 
 #----------------------------------------------------------------------------#
 # Filters.
@@ -479,7 +482,7 @@ if not app.debug:
 
 # Default port:
 if __name__ == '__main__':
-    app.run()
+    manager.run()
 
 # Or specify port manually:
 '''
