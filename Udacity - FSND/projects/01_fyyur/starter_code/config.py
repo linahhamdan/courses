@@ -10,7 +10,6 @@ DEBUG = True
 
 class DatabaseURI:
 
-    # Just change the names of your database and crendtials and all to connect to your local system
     DATABASE_NAME = "fyyur"
     username = 'postgres'
     password = ''
@@ -19,7 +18,5 @@ class DatabaseURI:
         username, password, url, DATABASE_NAME)
 
 
-# TODO. IMPLEMENT DATABASE URL
-# //username:password@server/db
 SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@:5432/fyyur'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
