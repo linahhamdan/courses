@@ -186,7 +186,6 @@ def create_venue_submission():
     phone = request.form['phone']
     genres = request.form.getlist('genres')
     facebook_link = request.form['facebook_link']
-    # venue = Venue(name=name)
     venue = Venue(name=name, city=city, state=state, address=address, phone=phone, genres=genres, facebook_link=facebook_link, image_link=image_link, website=website, seeking_talent=seeking_talent, seeking_description=seeking_description)
     db.session.add(venue)
     db.session.commit()
